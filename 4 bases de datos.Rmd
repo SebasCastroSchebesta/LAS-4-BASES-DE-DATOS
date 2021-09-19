@@ -1,0 +1,53 @@
+---
+title: "Las 4 bases de datos"
+author: "Jorge Sebastián Castro Schebesta"
+date: "18/9/2021"
+output: html_document
+---
+
+Elecciones Generales de Perú 2021: candidatos, cronograma y resultados
+
+a) Candidatos presidenciales
+
+```{r}
+library(htmltab)
+library(stringr)
+link = "https://es.wikipedia.org/wiki/Elecciones_generales_de_Per%C3%BA_de_2021"
+path = "/html/body/div[3]/div[3]/div[5]/div[1]/table[4]"
+dataWS = htmltab(link, path)
+head(dataWS) 
+```
+
+b) Recomendación de los horarios de votación según el último dígito del DNI
+
+```{r}
+library(htmltab)
+library(stringr)
+link2 = "https://www.onpe.gob.pe/modElecciones/elecciones/2021/EEGG/"
+path2 = "/html/body/main/section[2]/div/div[3]/div[2]/div[2]/div[2]/table"
+dataWS2 = htmltab(link2, path2)
+head(dataWS2) 
+```
+
+c) Cronograma electoral
+
+```{r}
+library(htmltab)
+library(stringr)
+link3 = "https://es.wikipedia.org/wiki/Elecciones_generales_de_Per%C3%BA_de_2021"
+path3 = "/html/body/div[3]/div[3]/div[5]/div[1]/table[2]"
+dataWS3 = htmltab(link3, path3)
+head(dataWS3) 
+```
+
+d) Resultados oficiales
+
+```{r}
+library(htmltab)
+library(stringr)
+link4 = "https://es.wikipedia.org/wiki/Elecciones_generales_de_Per%C3%BA_de_2021"
+path4 = "/html/body/div[3]/div[3]/div[5]/div[1]/table[10]"
+dataWS4 = htmltab(link4, path4)
+head(dataWS4)  
+```
+
